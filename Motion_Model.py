@@ -35,7 +35,7 @@ class Motion_Model
 		return [x, y, rho * self.rad2deg]
 
 	def distance(self, torque):
-		Fw = torque * self.wheelRad
+		Fw = torque / self.wheelRad
 		F_total = Fw - (self.v0 * self.vehDamping)
 		s_ddot = (1 / self.vehMass) * F_total
 		s_dot = s_ddot * Ts + v0
